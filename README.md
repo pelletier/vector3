@@ -11,7 +11,6 @@ version](http://fastcpp.blogspot.fr/2011/12/simple-vector3-class-with-sse-suppor
 #include <iostream>
 #include "vector3.h"
 
-
 int main() {
     Vector3 a(1, 1, 1);
     Vector3 b(2, 0, -1);
