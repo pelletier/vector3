@@ -4,6 +4,45 @@ This is a simple C++ library implementing a mathematical 3D-vector class using
 [SIMD](http://www.wikiwand.com/en/SIMD) instructions. It based on [this
 version](http://fastcpp.blogspot.fr/2011/12/simple-vector3-class-with-sse-support.html).
 
+## Example
+
+**test.cpp**
+```c++
+#include <iostream>
+#include "vector3.h"
+
+
+int main() {
+    Vector3 a(1, 1, 1);
+    Vector3 b(2, 0, -1);
+
+    std::cout << "a:\t" << a << std::endl
+              << "b:\t" << b << std::endl
+              << "a.x:\t" << a.x << std::endl
+              << "add:\t" << a + b << std::endl
+              << "sub:\t" << a - b << std::endl
+              << "dot:\t" << a.dot(b) << std::endl
+              << "smult:\t" << 2 * b << std::endl;
+    return 0;
+}
+```
+
+**compile**
+```bash
+c++ -o test test.cpp vector3.cpp -msse4
+```
+
+**outuput**
+```
+a:	Vector3(1, 1, 1)
+b:	Vector3(2, 0, -1)
+a.x:	1
+add:	Vector3(3, 1, 0)
+sub:	Vector3(-1, 1, 2)
+dot:	1
+smult:	Vector3(4, 0, -2)
+```
+
 ## Supported operations
 
 The provided class name is Vector3. All values are in floating-point precision.
@@ -21,7 +60,7 @@ The provided class name is Vector3. All values are in floating-point precision.
 * Norm computing
 * Equality testing
 
-The exhaustive list is int [vector3.h](vector3.h).
+The exhaustive list is available [vector3.h](vector3.h).
 
 ## Compiler flags
 
